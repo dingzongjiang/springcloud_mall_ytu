@@ -1,0 +1,31 @@
+server:
+  port: 8001
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/computer_store?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: nacos-order
+  cloud:
+    nacos:
+      discovery:
+        server_addr: localhost:8848
+
+##dubbo????
+dubbo:
+  protocol:
+    port: -1
+    name: dubbo
+  registry:
+    address: nacos://localhost:8848
+  consumer:
+    check: false
+
+mybatis:
+  configuration:
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+

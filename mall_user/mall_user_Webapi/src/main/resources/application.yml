@@ -1,0 +1,33 @@
+server:
+  port: 20002
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/csmall?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: wmy020518!
+  main:
+    allow-circular-references: true
+  profiles:
+    active: public
+  application:
+    name: nacos-user
+  cloud:
+    nacos:
+      discovery:
+        server_addr: localhost:8848
+  dubbo:
+    protocol:
+      port: -1
+      name: dubbo
+    registry:
+      address: nacos://localhost:8848
+    consumer:
+      check: false
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
+  page-size-zero: true
+

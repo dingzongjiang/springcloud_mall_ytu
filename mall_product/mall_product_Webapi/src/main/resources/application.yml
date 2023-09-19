@@ -1,0 +1,14 @@
+server:
+  port: 20010
+spring:
+  main:
+    allow-circular-references: true
+  profiles:
+    active: dev
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
+  page-size-zero: true
+

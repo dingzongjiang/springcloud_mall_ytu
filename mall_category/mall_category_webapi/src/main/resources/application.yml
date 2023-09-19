@@ -1,0 +1,19 @@
+server:
+  port: 20003
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+    username: root
+    password: lx200288
+  main:
+    allow-circular-references: true
+  profiles:
+    active: public
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countsql
+  page-size-zero: true
+
